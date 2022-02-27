@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="utf-8"/>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	 
+	<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous"/>
+      
+	<title>Calcule de IMC homme et femme</title>
+	<script type="text/javascript">
+	    
+		function Calculer(){	
+		
+		  document.getElementById("pr").value = document.getElementById("pr").value;
+		  document.getElementById("ag").value = document.getElementById("ag").value;
+		  document.getElementById("po").value = document.getElementById("po").value;
+		  document.getElementById("ta").value = document.getElementById("ta").value;
+
+
+		  alert((parseFloat(document.getElementById("po").value) / 
+			                        (parseFloat(document.getElementById("ta").value) * parseFloat(document.getElementById("ta").value)))*10000);
+			
+			
+		  
+           
+          document.getElementById("pr").value = document.getElementById("pr").value;
+		  document.getElementById("ag").value = document.getElementById("ag").value;
+		  document.getElementById("po").value = document.getElementById("po").value;
+		  document.getElementById("ta").value = document.getElementById("ta").value;
+
+		  document.getElementById("imc").value = (parseFloat(document.getElementById("po").value) / 
+			                        (parseFloat(document.getElementById("ta").value) * parseFloat(document.getElementById("ta").value)))*10000;
+			
+	
+			}
+				
+			
+	</script>
+</head>
+<body class="p-3 mb-2 bg-light text-dark" >
+  <section layout:fragment="content">
+  
+  
+  <div class="container my-2">
+<fieldset>
+	<p><legend>  Qu'est-ce que l'IMC </legend>
+	
+    L'indice de masse corporelle (IMC) est une mesure basée sur deux variantes :
+	la taille et le poids corporel.<br/>
+    La formule standard s’applique aux hommes et aux femmes d’âge adulte. </p>
+    
+	</fieldset>
+	
+<br/><br/><br/>
+	<div><b><u>Calculer votre IMC:</b> </u></div>
+	
+<br/>
+    <form name="frimc" action="#">
+        <table>
+	
+		<tr>
+			<th width="200">prénom</th>
+			<th width="200">âge</th>
+			<th width="200">poids (Kg)</th>
+			<th width="200">taille (m)</th>
+		</tr>
+		<tr>
+			<td  width="200"><input id="pr" name="pr" type="text" placeholder="Votre Nom"/></td>
+			<td  width="200"><input id="ag" name="ag" type="text" placeholder="Votre Age"/></td>
+			<td  width="200"><input id="po" name="po" type="text" placeholder="Votre Poids en (kg)"/></td>
+			<td  width="200"><input id="ta" name="ta" type="text" placeholder="Votre Taille en (m)"/></td>
+		</tr>
+		<tr>
+		    <th width="200"></th>
+		    <td  width="200"></td>
+		    <td></td>
+			<td width="200" align="center">
+			<input width="200" type="submit" value="Calculer" id="button" onClick="Calculer()"/>
+			</td>
+        </tr>
+		</table>
+	</form>
+	<br/><br/><br/><br/>
+	<p><b><i>Une valeur IMC (kg/m²), inférieur ou égal à 18.5</i></b>
+	Représente un Poids Insuffisant</p>
+	<p><b><i>Une valeur IMC (kg/m²), supérieure ou égale à 18.5 et inférieur ou égale à 24.9</i></b>
+	Représente un Poids Normal</p>
+	<p><b><i>Une valeur IMC (kg/m²), supérieure ou égale à 25 et inférieur ou égale à 29.9</i></b>
+	Représente un Surpoids";</p>
+	<p><b><i>Une valeur IMC (kg/m²), supérieure ou égale à 30</i></b>
+	Représente un Poids d'obésité";</p>
+  <br/><br/><br/><br/><br/><br/><br/><br/>
+  
+  	</div>
+
+  </section> 
+ <footer>
+  <div class="navbar-fixed-bottom">
+   <small>@ Calule d'IMC</small>
+  </div> 
+ </footer>
+</body>
+</html>
